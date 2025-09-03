@@ -1,3 +1,4 @@
+// Auto margin header section
 const navElement = document.querySelector("nav.navbar");
 const heroSection = document.querySelector("header.hero");
 
