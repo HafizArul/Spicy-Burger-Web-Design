@@ -292,7 +292,7 @@ section.item-ingredients .ingredients-container .item:nth-of-type(5) img {
 
 /* Slogan Section */
 section.slogan .slogan-container {
-    background-image: linear-gradient(to right, #ec0000, #ffa811);
+    background-image: linear-gradient(to right, rgba(236, 0, 0, .6), rgba(255, 168, 17, .6));
     box-sizing: border-box;
     padding: 40px 106px;
     width: 100%;
@@ -319,6 +319,18 @@ section.slogan .slogan-container a.order {
     width: 262px;
     border-radius: .8em;
     transition: .3s;
+}
+
+section.slogan .slogan-container h2.slogan-title {
+    font-weight: 500;
+    font-size: 2em;
+    line-height: 1.5;
+}
+
+section.slogan .slogan-container p.slogan-detail {
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 1.6;
 }
 
 section.slogan .slogan-container a.order:hover {
