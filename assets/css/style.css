@@ -1,3 +1,12 @@
+::selection {
+    background-color: #ffa811;
+    color: white;
+}
+
+button, input, a {
+    outline: none;
+}
+
 body {
     margin: 0;
     padding: 0;
