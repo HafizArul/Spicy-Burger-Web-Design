@@ -163,6 +163,31 @@ header.hero #menus-options .options img {
     border-radius: 24px;
 }
 
+header.hero #menus-options .options a {
+    z-index: 10;
+    position: relative;
+}
+
+header.hero #menus-options .options a::after {
+    content: '';
+    z-index: -1;
+    border-radius: 24px;
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    left: 10%;
+    right: 10%;
+    border: 3px solid #ffa811;
+    transition: .3s;
+}
+
+header.hero #menus-options .options a:hover::after {
+    top: -6px;
+    bottom: -3px;
+    left: -6px;
+    right: -6px;
+}
+
 header.hero #menus-options button#order-now {
     padding: 1em;
     border-radius: 1em;
@@ -177,7 +202,8 @@ header.hero #menus-options button#order-now {
 }
 
 header.hero #menus-options button#order-now:hover {
-    background-color: white;
+    background-color: rgba(255, 255, 255, .8);
+    backdrop-filter: blur(15px);
     color: black;
     box-shadow: inset 0 0 0 2px #ffa811;
 }
@@ -291,7 +317,7 @@ section.item-ingredients .ingredients-container .item:nth-of-type(5) img {
 }
 
 /* Slogan Section */
-section.slogan .slogan-container {
+section.services .services-container {
     background-image: linear-gradient(to right, rgba(236, 0, 0, .6), rgba(255, 168, 17, .6));
     box-sizing: border-box;
     padding: 40px 106px;
@@ -306,7 +332,7 @@ section.slogan .slogan-container {
     column-gap: 2.5em;
 }
 
-section.slogan .slogan-container a.order {
+section.services .services-container a.order {
     padding: 12px 24px;
     box-shadow: 0 0 0 2px white;
     color: white;
@@ -321,26 +347,187 @@ section.slogan .slogan-container a.order {
     transition: .3s;
 }
 
-section.slogan .slogan-container h2.slogan-title {
+section.services .services-container h2.services-title {
     font-weight: 500;
     font-size: 2em;
     line-height: 1.5;
 }
 
-section.slogan .slogan-container p.slogan-detail {
+section.services .services-container p.services-detail {
     font-size: 1.2em;
     font-weight: 400;
     line-height: 1.6;
 }
 
-section.slogan .slogan-container a.order:hover {
+section.services .services-container a.order:hover {
     background-color: #fff;
     color: black;
     box-shadow: none;
 }
 
-section.slogan .slogan-container img {
+section.services .services-container img {
     grid-row: 1 / span 3;
     grid-column: 2;
     width: 100%;
+}
+
+/* Testimoni Section */
+section.testimonial h2 {
+    font-weight: 500;
+    margin: 0;
+}
+
+section.testimonial h2.testimoni {
+    margin-top: 32px;
+    font-size: 40px;
+    color: red;
+}
+
+section.testimonial h2.testimoni-title {
+    font-size: 48px;
+}
+
+section.testimonial h2.testimoni-title span {
+    color: red;
+}
+
+section.testimonial .testimoni-container {
+    margin-top: 3em;
+    display: grid;
+    column-gap: 4em;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+section.testimonial .testimoni-container .item {
+    --user-img-width: 64px;
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+    row-gap: 2em;
+}
+
+section.testimonial img.user-photo {
+    width: var(--user-img-width);
+}
+
+section.testimonial .rating {
+    place-self: center end;
+}
+
+section.testimonial .rating img {
+    width: 24px;
+}
+
+section.testimonial .testimoni-container .user-details {
+    display: grid;
+    place-items: center start;
+    grid-template: repeat(2, 1fr) / var(--user-img-width) 1fr;
+    column-gap: 1.5em;
+}
+
+section.testimonial .testimoni-container .user-details img.user-photo {
+    grid-row: 1 / 3;
+}
+
+section.testimonial .testimoni-container .user-details p.username {
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+section.testimonial .testimoni-container p.user-review {
+    text-align: justify;
+    text-indent: 2em;
+    grid-column: 1 / 3;
+}
+
+/* Footer */
+footer.footer-section {
+    --footer-padding-top: 64px;
+    --logo-img-height: 40px;
+    --social-media-img-width: 32px;
+    padding: var(--footer-padding-top) calc(2 * var(--footer-padding-top));
+    background-color: #ec0000;
+    color: white;
+    display: grid;
+    grid-template: repeat(2, auto) / 1fr 1.5fr;
+    column-gap: 3em;
+    row-gap: 2em;
+}
+
+footer.footer-section .img-logo-container {
+    grid-column: 1 / 4;
+}
+
+footer.footer-section .img-logo-container img {
+    height: var(--logo-img-height);
+}
+
+footer.footer-section p.product-slogan {
+    font-size: 1.3em;
+}
+
+footer.footer-section .product-links {
+    font-size: 1.1em;
+    grid-column: 2 / 4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) auto;
+    place-self: end;
+    column-gap: 3em;
+    row-gap: 1em;
+}
+
+footer.footer-section .product-links p.links-header {
+    font-size: 1.1em;
+    font-weight: 500;
+    margin: 3px 0;
+}
+
+footer.footer-section .product-links a {
+    display: flex;
+    gap: .8em;
+    width: fit-content;
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+footer.footer-section .product-links span.badged-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+footer.footer-section .product-links span.new-badge {
+    padding: 4px 16px;
+    background-color: white;
+    color: black;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 50em;
+}
+
+footer.footer-section .product-links a::after {
+    content: '';
+    height: 1px;
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 100%;
+    background-color: #fff;
+    transition: .3s;
+}
+
+footer.footer-section .product-links a:hover::after {
+    right: 0;
+}
+
+footer.footer-section .social-media-img-links {
+    grid-column: 2 / 4;
+    place-self: center end;
+    display: flex;
+    gap: 1.5em;
+}
+
+footer.footer-section .social-media-img-links img {
+    width: var(--social-media-img-width);
 }
